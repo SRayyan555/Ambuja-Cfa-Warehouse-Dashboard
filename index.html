@@ -41,6 +41,10 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 <span>Monthly Report</span>
             </a>
+            <a href="#" class="nav-item" data-section="details" onclick="switchSection('details',this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                <span>Detailed Sales</span>
+            </a>
             <a href="#" class="nav-item" data-section="reconciliation" onclick="switchSection('reconciliation',this)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 <span>Reconciliation</span>
@@ -91,6 +95,10 @@
                         <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
                         <div class="kpi-info"><span class="kpi-label">Current Stock</span><span class="kpi-value" id="kpiMTVal">—</span><span class="kpi-unit">MT</span></div>
                     </div>
+                    <div class="kpi-card kpi-red" id="kpiMissingShipTo">
+                        <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <div class="kpi-info"><span class="kpi-label">Missing Ship-To</span><span class="kpi-value" id="kpiMissingShipToVal">—</span><span class="kpi-unit">Entries</span></div>
+                    </div>
                 </div>
                 <div class="charts-row">
                     <div class="chart-card wide"><div class="chart-header"><h3>Stock Trend (April 2026)</h3></div><div class="chart-body"><canvas id="chartStockTrend"></canvas></div></div>
@@ -139,6 +147,34 @@
                 <div class="table-wrapper"><table class="data-table" id="tableMonthlyReport"></table></div>
                 <div class="charts-row mt">
                     <div class="chart-card wide"><div class="chart-header"><h3>Dealer Confirmation Summary (MT)</h3></div><div class="chart-body"><canvas id="chartMonthlyConfirmation"></canvas></div></div>
+                </div>
+            </section>
+
+            <!-- Detailed Sales Section -->
+            <section class="section" id="section-details">
+                <div class="section-header-row">
+                    <h2>Detailed Dealer Wise Sale Report</h2>
+                    <div class="filter-group">
+                        <input type="text" id="detailSearch" placeholder="Search Dealer or Ship-To..." oninput="filterDetailTable()">
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table" id="tableDetailedSales">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Dealer Name</th>
+                                <th>Ship To</th>
+                                <th>Address</th>
+                                <th>Sada (MT)</th>
+                                <th>Plus (MT)</th>
+                                <th>Total (MT)</th>
+                                <th>Truck No.</th>
+                                <th>Freight</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyDetailedSales"></tbody>
+                    </table>
                 </div>
             </section>
 

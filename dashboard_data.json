@@ -5,10 +5,6 @@
       "dealer": "JAI SHRI KRISHNA AND SONS",
       "shipTo": "",
       "address": "SIDDIQPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 300,
       "salePlus": 0,
       "saleKaw": 0,
@@ -22,10 +18,6 @@
       "dealer": "J.P. AND SONS",
       "shipTo": "ANSH",
       "address": "GAURABADSHAHPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 0,
       "salePlus": 840,
       "saleKaw": 0,
@@ -39,10 +31,6 @@
       "dealer": "JAI SHRI KRISHNA AND SONS",
       "shipTo": "",
       "address": "SIDDIQPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 640,
       "salePlus": 0,
       "saleKaw": 0,
@@ -56,10 +44,6 @@
       "dealer": "J.P. AND SONS",
       "shipTo": "",
       "address": "KESHAVPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 0,
       "salePlus": 840,
       "saleKaw": 0,
@@ -73,10 +57,6 @@
       "dealer": "JAI SHRI KRISHNA AND SONS",
       "shipTo": "",
       "address": "SIDDIQPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 560,
       "salePlus": 0,
       "saleKaw": 0,
@@ -90,10 +70,6 @@
       "dealer": "JAI SHRI KRISHNA AND SONS",
       "shipTo": "",
       "address": "SIDDIQPUR",
-      "returnA": 0,
-      "returnP": 0,
-      "returnK": 0,
-      "returnCT": 0,
       "saleSada": 870,
       "salePlus": 0,
       "saleKaw": 0,
@@ -103,435 +79,172 @@
       "freight": "SELF"
     }
   ],
+  "missingShipTo": 5,
   "stock": [
     {
       "date": "2026-04-01",
-      "inwardPPCY": 1800,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1800,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 90
+      "totalMT": 90,
+      "totalPPCY": 1800
     },
     {
       "date": "2026-04-02",
-      "inwardPPCY": 1800,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1800,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 90
+      "totalMT": 90,
+      "totalPPCY": 1800
     },
     {
       "date": "2026-04-03",
-      "inwardPPCY": 1800,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1800,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 90
+      "totalMT": 90,
+      "totalPPCY": 1800
     },
     {
       "date": "2026-04-04",
-      "inwardPPCY": 1800,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 300,
-      "totalPPCY": 1800,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 90
+      "totalMT": 90,
+      "totalPPCY": 1800
     },
     {
       "date": "2026-04-05",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-06",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-07",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-08",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-09",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-10",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-11",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-12",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-13",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-14",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-15",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-16",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-17",
-      "inwardPPCY": 1500,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 560,
-      "totalPPCY": 1500,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 75
+      "totalMT": 75,
+      "totalPPCY": 1500
     },
     {
       "date": "2026-04-18",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-19",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-20",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-21",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-22",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-23",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-24",
-      "inwardPPCY": 940,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 870,
-      "totalPPCY": 940,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 47
+      "totalMT": 47,
+      "totalPPCY": 940
     },
     {
       "date": "2026-04-25",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-04-26",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-04-27",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-04-28",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-04-29",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-04-30",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-05-01",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-05-02",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     },
     {
       "date": "2026-05-03",
-      "inwardPPCY": 70,
-      "inwardPlus": 0,
-      "inwardKwach": 0,
-      "inwardCT": 0,
-      "outwardPPCY": 0,
-      "totalPPCY": 70,
-      "totalPlus": 0,
-      "totalKwach": 0,
-      "totalCT": 0,
-      "totalMT": 3.5
+      "totalMT": 3.5,
+      "totalPPCY": 70
     }
   ],
   "monthlyReport": [
@@ -540,7 +253,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 3,
-      "closingTotal": 1.75,
       "ppcy": 3,
       "kawach": 0,
       "plus": 0
@@ -550,7 +262,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 25,
-      "closingTotal": 0,
       "ppcy": 25,
       "kawach": 0,
       "plus": 0
@@ -560,7 +271,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -570,7 +280,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -580,7 +289,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -590,7 +298,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -600,7 +307,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -610,7 +316,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -620,7 +325,6 @@
       "cfa": "CFA-1",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -630,7 +334,6 @@
       "cfa": "CFA-2",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -640,7 +343,6 @@
       "cfa": "CFA-2",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -650,7 +352,6 @@
       "cfa": "CFA-2",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -660,7 +361,6 @@
       "cfa": "CFA-2",
       "godownTotal": 118.5,
       "sapConfirmed": 83.5,
-      "closingTotal": 19.25,
       "ppcy": 83.5,
       "kawach": 0,
       "plus": 0
@@ -670,7 +370,6 @@
       "cfa": "CFA-2",
       "godownTotal": 84,
       "sapConfirmed": 71,
-      "closingTotal": 13,
       "ppcy": 0,
       "kawach": 0,
       "plus": 71
@@ -680,7 +379,6 @@
       "cfa": "CFA-2",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
@@ -690,35 +388,24 @@
       "cfa": "CFA-2",
       "godownTotal": 0,
       "sapConfirmed": 0,
-      "closingTotal": 0,
       "ppcy": 0,
       "kawach": 0,
       "plus": 0
     }
   ],
-  "cfa1Totals": {
-    "godownTotal": 0,
-    "sapTotal": 28,
-    "closingTotal": 1.75
-  },
-  "cfa2Totals": {
-    "godownTotal": 202.5,
-    "sapTotal": 154.5,
-    "closingTotal": 32.25
-  },
   "grandTotals": {
+    "godownTotal": 202.5,
+    "sapTotal": 182.5,
+    "closingTotal": 34,
     "godownPPCY": 118.5,
     "godownKaw": 0,
     "godownPlus": 84,
-    "godownTotal": 202.5,
     "sapPPCY": 111.5,
     "sapKaw": 0,
     "sapPlus": 71,
-    "sapTotal": 182.5,
     "closingPPCY": 21,
     "closingKaw": 0,
-    "closingPlus": 13,
-    "closingTotal": 34
+    "closingPlus": 13
   },
   "godownStock": {
     "PPCY": 122,

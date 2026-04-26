@@ -30,12 +30,13 @@ function switchSection(id, el) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('section-' + id).classList.add('active');
   if (el) el.classList.add('active');
-  const titles = {overview:'Dashboard Overview',dealers:'Dealer Performance',stock:'Stock Management',dispatch:'Dispatch Log',monthly:'Monthly Confirmation Report',reconciliation:'Reconciliation'};
+  const titles = {overview:'Dashboard Overview',dealers:'Dealer Performance',stock:'Stock Management',dispatch:'Dispatch Log',monthly:'Monthly Confirmation Report',details:'Detailed Dealer Wise Report',reconciliation:'Reconciliation'};
   document.getElementById('sectionTitle').textContent = titles[id] || id;
   document.getElementById('sidebar').classList.remove('open');
   if (id === 'stock') initStockCharts();
   if (id === 'dispatch') initDispatchCharts();
   if (id === 'monthly') initMonthlyReport();
+  if (id === 'details') initDetailedReport();
   if (id === 'reconciliation') initReconciliationCharts();
 }
 
@@ -46,11 +47,11 @@ function initKPIs() {
   document.getElementById('kpiClosingVal').textContent = DATA.grandTotals.closingTotal.toLocaleString();
   const latest = DATA.stock[DATA.stock.length - 1];
   document.getElementById('kpiMTVal').textContent = latest.totalMT;
+  document.getElementById('kpiMissingShipToVal').textContent = DATA.missingShipTo || 0;
 }
 
 // ==================== OVERVIEW CHARTS ====================
 function initOverviewCharts() {
-  // Stock Trend
   const stockDates = DATA.stock.map(s => {const d = new Date(s.date); return d.getDate() + ' Apr';});
   const stockVals = DATA.stock.map(s => s.totalPPCY);
   charts.stockTrend = new Chart(document.getElementById('chartStockTrend'), {
@@ -59,7 +60,7 @@ function initOverviewCharts() {
       labels: stockDates,
       datasets: [{
         label: 'PPCY Stock (MT)',
-        data: stockVals.map(v => v/20), // Converting to MT for trend
+        data: stockVals.map(v => v/20),
         borderColor: '#3b82f6',
         backgroundColor: createGradient('chartStockTrend', '#3b82f6'),
         fill: true, tension: 0.4, pointRadius: 2, pointHoverRadius: 6,
@@ -69,7 +70,6 @@ function initOverviewCharts() {
     options: {responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(30,41,59,.4)'}},y:{grid:{color:'rgba(30,41,59,.4)'},beginAtZero:true}}}
   });
 
-  // Product Mix Doughnut
   const gt = DATA.grandTotals;
   charts.productMix = new Chart(document.getElementById('chartProductMix'), {
     type: 'doughnut',
@@ -84,7 +84,6 @@ function initOverviewCharts() {
     options: {responsive:true,maintainAspectRatio:false,cutout:'68%',plugins:{legend:{position:'bottom',labels:{padding:14,font:{size:11}}}}}
   });
 
-  // CFA Dispatch Bar
   charts.cfaDispatch = new Chart(document.getElementById('chartCFADispatch'), {
     type: 'bar',
     data: {
@@ -98,7 +97,6 @@ function initOverviewCharts() {
     options: {responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{padding:12}}},scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(30,41,59,.4)'},beginAtZero:true}}}
   });
 
-  // Dealer Sales Bar
   const dealers = DATA.monthlyReport.slice().sort((a,b) => b.godownTotal - a.godownTotal).slice(0, 8);
   charts.dealerSales = new Chart(document.getElementById('chartDealerSales'), {
     type: 'bar',
@@ -164,6 +162,42 @@ function initMonthlyReport() {
   }
 }
 
+// ==================== DETAILED REPORT ====================
+function initDetailedReport() {
+  renderDetailTable(DATA.sales);
+}
+
+function renderDetailTable(data) {
+  const tbody = document.getElementById('tbodyDetailedSales');
+  tbody.innerHTML = '';
+  data.forEach(s => {
+    const d = new Date(s.date);
+    const dateStr = isNaN(d.getTime()) ? s.date : d.getDate() + '-' + d.toLocaleString('en',{month:'short'});
+    const shipTo = s.shipTo || '<span class="text-dim">NOT SPECIFIED</span>';
+    tbody.innerHTML += `<tr>
+      <td>${dateStr}</td>
+      <td class="dealer-name">${s.dealer}</td>
+      <td style="font-weight:700;color:var(--accent-blue)">${shipTo}</td>
+      <td>${s.address}</td>
+      <td>${(s.saleSada/20).toFixed(1)}</td>
+      <td>${(s.salePlus/20).toFixed(1)}</td>
+      <td style="font-weight:700;color:var(--accent-green)">${(s.total/20).toFixed(1)}</td>
+      <td>${s.truckNo}</td>
+      <td>${s.freight}</td>
+    </tr>`;
+  });
+}
+
+function filterDetailTable() {
+  const q = document.getElementById('detailSearch').value.toLowerCase();
+  const filtered = DATA.sales.filter(s => 
+    s.dealer.toLowerCase().includes(q) || 
+    s.shipTo.toLowerCase().includes(q) || 
+    s.address.toLowerCase().includes(q)
+  );
+  renderDetailTable(filtered);
+}
+
 // ==================== STOCK SECTION ====================
 function initStockCharts() {
   if (charts.dailyStock) return;
@@ -198,7 +232,6 @@ function fillStockItems(id, data, color, isDiff) {
     const v = data[k];
     let cls = '';
     if (isDiff) cls = v < 0 ? 'negative' : v > 0 ? 'positive' : '';
-    // Show as MT in the detail box too? Let's stick to MT labels but values from data
     const mtVal = (v/20).toFixed(2);
     el.innerHTML += `<div class="stock-item"><span class="stock-item-label">${k === 'total' ? 'TOTAL' : k}</span><span class="stock-item-value ${cls}">${mtVal} MT</span></div>`;
   });
@@ -212,7 +245,7 @@ function initDispatchCharts() {
   const tbody = t.querySelector('tbody');
   DATA.sales.forEach(s => {
     const d = new Date(s.date);
-    const dateStr = d.getDate() + '-' + d.toLocaleString('en',{month:'short'});
+    const dateStr = isNaN(d.getTime()) ? s.date : d.getDate() + '-' + d.toLocaleString('en',{month:'short'});
     tbody.innerHTML += `<tr><td>${dateStr}</td><td class="dealer-name">${s.dealer}</td><td>${s.address}</td><td>${(s.saleSada/20).toFixed(1)}</td><td>${(s.salePlus/20).toFixed(1)}</td><td style="font-weight:700;color:var(--accent-blue)">${(s.total/20).toFixed(1)}</td><td>${s.truckNo}</td></tr>`;
   });
 
@@ -220,7 +253,7 @@ function initDispatchCharts() {
     charts.dispatchTimeline = new Chart(document.getElementById('chartDispatchTimeline'), {
       type: 'bar',
       data: {
-        labels: DATA.sales.map(s => {const d=new Date(s.date);return d.getDate()+' Apr'}),
+        labels: DATA.sales.map(s => {const d=new Date(s.date);return isNaN(d.getTime()) ? s.date : d.getDate()+' Apr'}),
         datasets: [
           {label:'Sada',data:DATA.sales.map(s=>s.saleSada/20),backgroundColor:'#3b82f6',stack:'s'},
           {label:'Plus',data:DATA.sales.map(s=>s.salePlus/20),backgroundColor:'#8b5cf6',stack:'s'}
