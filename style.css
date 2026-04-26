@@ -130,11 +130,27 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
   .stock-comparison-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .sidebar{transform:translateX(-100%)}
+  .sidebar{transform:translateX(-100%);z-index:999;box-shadow:4px 0 24px rgba(0,0,0,.5)}
   .sidebar.open{transform:translateX(0)}
-  .main-content{margin-left:0}
+  .main-content{margin-left:0;width:100%}
   .menu-toggle{display:block}
   .kpi-grid{grid-template-columns:1fr}
   .content-area{padding:20px 16px}
-  .top-header{padding:14px 16px}
+  .top-header{padding:14px 16px;flex-wrap:wrap;gap:12px}
+  .header-actions{margin-left:0;width:100%;display:flex;justify-content:flex-start}
+  .filter-group{flex-direction:column;align-items:stretch;width:100%}
+  .filter-group input{min-width:0;width:100%}
+  .section-header-row{flex-direction:column;align-items:flex-start}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:998;backdrop-filter:blur(3px)}
+  .sidebar-overlay.show{display:block}
+}
+@media(max-width:480px){
+  .header-title h1{font-size:18px}
+  .kpi-card{padding:16px;gap:12px}
+  .kpi-value{font-size:24px}
+  .kpi-icon{width:40px;height:40px}
+  .kpi-icon svg{width:20px;height:20px}
+  .chart-body{height:240px}
+  .brand-text{display:block}
+  .btn{width:100%;justify-content:center}
 }

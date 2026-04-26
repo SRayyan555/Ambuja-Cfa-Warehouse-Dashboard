@@ -32,12 +32,31 @@ function switchSection(id, el) {
   if (el) el.classList.add('active');
   const titles = {overview:'Dashboard Overview',dealers:'Dealer Performance',stock:'Stock Management',dispatch:'Dispatch Log',monthly:'Monthly Confirmation Report',details:'Detailed Dealer Wise Report',reconciliation:'Reconciliation'};
   document.getElementById('sectionTitle').textContent = titles[id] || id;
-  document.getElementById('sidebar').classList.remove('open');
+  
+  // Close sidebar on mobile
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar.classList.contains('open')) {
+    toggleSidebar();
+  }
+
   if (id === 'stock') initStockCharts();
   if (id === 'dispatch') initDispatchCharts();
   if (id === 'monthly') initMonthlyReport();
   if (id === 'details') initDetailedReport();
   if (id === 'reconciliation') initReconciliationCharts();
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  sidebar.classList.toggle('open');
+  if (sidebar.classList.contains('open')) {
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  } else {
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
 }
 
 // ==================== KPI ====================
