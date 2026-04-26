@@ -202,6 +202,11 @@ function filterDetailTable() {
 }
 
 function downloadPDF() {
+  if (!window.jspdf) {
+    alert("PDF library is still loading. Please wait a moment.");
+    return;
+  }
+  
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF('l', 'mm', 'a4');
   
@@ -243,7 +248,15 @@ function downloadPDF() {
     }
   });
 
-  doc.save('Ambuja_Sales_Report_' + new Date().getTime() + '.pdf');
+  // Manual download to force filename extension
+  const blob = doc.output('blob');
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'Ambuja_Sales_Report.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // ==================== STOCK SECTION ====================
