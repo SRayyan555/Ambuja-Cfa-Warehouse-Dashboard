@@ -37,6 +37,10 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                 <span>Dispatch</span>
             </a>
+            <a href="#" class="nav-item" data-section="monthly" onclick="switchSection('monthly',this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Monthly Report</span>
+            </a>
             <a href="#" class="nav-item" data-section="reconciliation" onclick="switchSection('reconciliation',this)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 <span>Reconciliation</span>
@@ -73,15 +77,15 @@
                 <div class="kpi-grid">
                     <div class="kpi-card kpi-primary" id="kpiTotalDispatch">
                         <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                        <div class="kpi-info"><span class="kpi-label">Total Godown Sale</span><span class="kpi-value" id="kpiGodownSale">—</span><span class="kpi-unit">Bags</span></div>
+                        <div class="kpi-info"><span class="kpi-label">Total Godown Sale</span><span class="kpi-value" id="kpiGodownSale">—</span><span class="kpi-unit">Tonnes (MT)</span></div>
                     </div>
                     <div class="kpi-card kpi-green" id="kpiSAPSale">
                         <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-                        <div class="kpi-info"><span class="kpi-label">Total SAP Sale</span><span class="kpi-value" id="kpiSAPSaleVal">—</span><span class="kpi-unit">Bags</span></div>
+                        <div class="kpi-info"><span class="kpi-label">Total SAP Sale</span><span class="kpi-value" id="kpiSAPSaleVal">—</span><span class="kpi-unit">Tonnes (MT)</span></div>
                     </div>
                     <div class="kpi-card kpi-amber" id="kpiClosing">
                         <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-                        <div class="kpi-info"><span class="kpi-label">Closing Stock</span><span class="kpi-value" id="kpiClosingVal">—</span><span class="kpi-unit">Bags</span></div>
+                        <div class="kpi-info"><span class="kpi-label">Closing Stock</span><span class="kpi-value" id="kpiClosingVal">—</span><span class="kpi-unit">Tonnes (MT)</span></div>
                     </div>
                     <div class="kpi-card kpi-purple" id="kpiMT">
                         <div class="kpi-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
@@ -126,6 +130,15 @@
                 <div class="table-wrapper"><table class="data-table" id="tableDispatch"></table></div>
                 <div class="charts-row mt">
                     <div class="chart-card wide"><div class="chart-header"><h3>Dispatch Timeline</h3></div><div class="chart-body"><canvas id="chartDispatchTimeline"></canvas></div></div>
+                </div>
+            </section>
+
+            <!-- Monthly Report Section -->
+            <section class="section" id="section-monthly">
+                <div class="section-header-row"><h2>Monthly Dealer Confirmation Report</h2><span class="badge badge-green">Received Confirmation</span></div>
+                <div class="table-wrapper"><table class="data-table" id="tableMonthlyReport"></table></div>
+                <div class="charts-row mt">
+                    <div class="chart-card wide"><div class="chart-header"><h3>Dealer Confirmation Summary (MT)</h3></div><div class="chart-body"><canvas id="chartMonthlyConfirmation"></canvas></div></div>
                 </div>
             </section>
 
