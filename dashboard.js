@@ -163,7 +163,10 @@ function initMonthlyReport() {
 }
 
 // ==================== DETAILED REPORT ====================
+let filteredSalesData = [];
+
 function initDetailedReport() {
+  filteredSalesData = DATA.sales;
   renderDetailTable(DATA.sales);
 }
 
@@ -190,12 +193,57 @@ function renderDetailTable(data) {
 
 function filterDetailTable() {
   const q = document.getElementById('detailSearch').value.toLowerCase();
-  const filtered = DATA.sales.filter(s => 
+  filteredSalesData = DATA.sales.filter(s => 
     s.dealer.toLowerCase().includes(q) || 
     s.shipTo.toLowerCase().includes(q) || 
     s.address.toLowerCase().includes(q)
   );
-  renderDetailTable(filtered);
+  renderDetailTable(filteredSalesData);
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF('l', 'mm', 'a4');
+  
+  // Title
+  doc.setFontSize(18);
+  doc.setTextColor(40);
+  doc.text('Ambuja Cement - Detailed Sales Report', 14, 20);
+  doc.setFontSize(11);
+  doc.setTextColor(100);
+  doc.text('Date: ' + new Date().toLocaleDateString(), 14, 28);
+
+  const head = [['Date', 'Dealer Name', 'Ship To', 'Address', 'Sada (MT)', 'Plus (MT)', 'Total (MT)', 'Truck No.', 'Freight']];
+  const body = filteredSalesData.map(s => {
+    const d = new Date(s.date);
+    const dateStr = isNaN(d.getTime()) ? s.date : d.getDate() + '-' + d.toLocaleString('en',{month:'short'});
+    return [
+      dateStr,
+      s.dealer,
+      s.shipTo || 'N/A',
+      s.address,
+      (s.saleSada/20).toFixed(1),
+      (s.salePlus/20).toFixed(1),
+      (s.total/20).toFixed(1),
+      s.truckNo,
+      s.freight
+    ];
+  });
+
+  doc.autoTable({
+    startY: 35,
+    head: head,
+    body: body,
+    theme: 'grid',
+    headStyles: { fillColor: [59, 130, 246], textColor: 255, fontSize: 10 },
+    styles: { fontSize: 9, cellPadding: 3 },
+    columnStyles: {
+      1: { fontStyle: 'bold' },
+      6: { fontStyle: 'bold', textColor: [16, 185, 129] }
+    }
+  });
+
+  doc.save('Ambuja_Sales_Report_' + new Date().getTime() + '.pdf');
 }
 
 // ==================== STOCK SECTION ====================

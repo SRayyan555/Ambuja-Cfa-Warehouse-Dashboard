@@ -112,6 +112,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .badge-green{background:rgba(16,185,129,.12);color:var(--accent-green);border:1px solid rgba(16,185,129,.2)}
 
 /* ============ UTILITY ============ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--radius-sm);font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;border:none;outline:none}
+.btn-primary{background:var(--accent-blue);color:#fff}
+.btn-primary:hover{background:#2563eb;transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,.3)}
 .section-header-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;justify-content:space-between}
 .filter-group{display:flex;gap:12px;align-items:center}
 .filter-group input{background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:8px 16px;border-radius:var(--radius-sm);outline:none;font-size:13px;min-width:280px;transition:border-color .2s}
